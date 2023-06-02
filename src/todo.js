@@ -7,6 +7,8 @@ function Todo() {
     const [task, setTask] = useState('')
     const [tasks, setTasks] = useState('')
 
+    const [edit, setEdit] = useState('')
+
     const handleChange = (event) => {
         setTask(event.target.value);
         // console.log(task);
