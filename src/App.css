@@ -28,26 +28,21 @@ button{
 
 .add-btn{
   padding: 10px 20px;
-  background: linear-gradient(#00bfdc, #008295);
   border: 0px;
   border-radius: 5px;
   box-shadow: 2px 3px 6px #000000;
+  background: linear-gradient(#00bfdc, #008295);
   font-weight: 600;
 
   color: #eeeeee;
-  transition: background 3s;
-
 }
 
 .add-btn:hover{
-  transition: 100ms ease-in-out;
   background: linear-gradient(-45deg, #008295, #00bfdc);
 }
 
 .add-btn:active{
-  
-  transition: ease-in-out;
-  /* box-shadow: -1px -1px 10px; */
+  transition: 100ms ease-in-out;
   box-shadow: none;
 
 }
@@ -65,10 +60,32 @@ button{
   color: #FFFFFF;
   list-style: none;
   margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .delete-btn{
   margin-bottom: 20px;
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: 2px 3px 6px #000000;
+
+  background: linear-gradient(-45deg, #ff4141, #bb0c0c);
+  color: #FFFFFF;
+  font-weight: 600;
+
+}
+
+.delete-btn:hover{
+  background: linear-gradient( #bb0c0c, #ff4141);
+  
+}
+
+.delete-btn:active{
+  transition: 100ms ease-in-out;
+  box-shadow: none;
 }
 
 
