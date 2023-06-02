@@ -24,7 +24,26 @@ function Todo() {
     <div>
         <input type="text" value={task} className="input" onChange={handleChange}/>
         <button className="add-btn" onClick={addTodo}>Add</button>
+
+        {tasks?.length > 0 ? (
+        <ul className='list-display'>
+            {tasks.map((task, index) => (
+                <div className="task">
+                    <li key={index}>{task}</li>
+                    <button className="delete-btn">Delete</button>
+                </div>
+            ))}
+        </ul>
+        ) : (
+            <div className="empty">
+                <p>No task found</p>
+            </div>
+
+        )}
+        
     </div>
+
+
   )
 }
 
