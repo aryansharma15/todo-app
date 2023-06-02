@@ -8,42 +8,67 @@ h1{
 }
 
 body{
-  background-color: #282c34;
+  background-color: #18574f;
 }
 
 .input{
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   margin-right: 30px;
   border-radius: 5px;
   padding: 10px 10px;
-  width: 180px;
+  width: 220px;
   box-shadow: 2px 3px 3px;
   border: 0px solid;
 }
 
-.add-btn{
-  padding: 10px 20px;
-  background-color: #00ddff;
-  border: 0px;
-  border-radius: 5px;
-  box-shadow: 2px 3px 3px;
-  pointer-events: auto;
+button{
+  cursor: pointer;
 }
 
-.add-btn:click{
-  box-shadow: 0px 0px 0px;
+.add-btn{
+  padding: 10px 20px;
+  background: linear-gradient(#00bfdc, #008295);
+  border: 0px;
+  border-radius: 5px;
+  box-shadow: 2px 3px 6px #000000;
+  font-weight: 600;
+
+  color: #eeeeee;
+  transition: background 3s;
+
+}
+
+.add-btn:hover{
+  transition: 100ms ease-in-out;
+  background: linear-gradient(-45deg, #008295, #00bfdc);
+}
+
+.add-btn:active{
+  
+  transition: ease-in-out;
+  /* box-shadow: -1px -1px 10px; */
+  box-shadow: none;
+
+}
+
+.empty>p{
+  color: #FFFFFF;
 }
 
 .task{
-  display: flex;
-  margin-top: 60px;
-  margin-left: 500px;
+  /* display: flex;
+  justify-content: space-evenly; */
 }
 
 .task>li{
   color: #FFFFFF;
   list-style: none;
-  margin-right: 100px;
+  margin-top: 20px;
+}
+
+.delete-btn{
+  margin-bottom: 20px;
 }
 
 

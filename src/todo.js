@@ -23,7 +23,7 @@ function Todo() {
   return (
     <div>
         <input type="text" value={task} className="input" onChange={handleChange}/>
-        <button className="add-btn" onClick={addTodo}>Add</button>
+        <button className="add-btn" onClick={addTodo}>Add Task</button>
 
         {tasks?.length > 0 ? (
         <ul className='list-display'>
