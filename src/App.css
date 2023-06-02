@@ -17,13 +17,17 @@ body{
   border-radius: 5px;
   padding: 10px 10px;
   width: 180px;
+  box-shadow: 2px 3px 3px;
+  border: 0px solid;
 }
 
-.btn{
+.add-btn{
   padding: 10px 20px;
-  background-color: #56f495;
+  background-color: #00ddff;
   border: 0px;
   border-radius: 5px;
+  box-shadow: 2px 3px 3px;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
