@@ -7,7 +7,7 @@ function Todo() {
     const [task, setTask] = useState('')
     const [tasks, setTasks] = useState('')
 
-    const [edit, setEdit] = useState('')
+    // const [edit, setEdit] = useState('')
 
     const handleChange = (event) => {
         setTask(event.target.value);
@@ -22,6 +22,13 @@ function Todo() {
         console.log(tasks)
     };
 
+    const delTask = (text) => {
+        const newTask = tasks.filter((task) => {
+            return task !== text;
+        });
+        setTasks(newTask);
+    };
+
   return (
     <div>
         <input type="text" value={task} className="input" onChange={handleChange}/>
@@ -32,7 +39,9 @@ function Todo() {
             {tasks.map((task, index) => (
                 <div className="task">
                     <li key={index}>{task}</li>
-                    <button className="delete-btn">Delete</button>
+                    <button className="delete-btn" onClick={() => {
+                        delTask(task);
+                    }}>Delete</button>
                 </div>
             ))}
         </ul>
