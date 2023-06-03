@@ -15,8 +15,14 @@ function Todo() {
     }
 
     const addTodo = () => {
-        if(task !== ""){
-            setTasks([...tasks, task]);
+        if(task.trim() !== ""){
+            const newTask = {
+                id: Math.random() * 100,
+                text: task,
+                isDone: false
+            }
+
+            setTasks([...tasks, newTask]);
             setTask("");
         }
         console.log(tasks)
@@ -24,14 +30,14 @@ function Todo() {
 
     const delTask = (id) => {
         const newTask = tasks.filter((task) => {
-            return task !== id;
+            return task.id !== id;
         });
         setTasks(newTask);
     };
 
-    const markAsDone = (value) => {
+    const markAsDone = (id) => {
         const updatedTasks = tasks.map((task) => {
-            if(task === value){
+            if(task.id === id){
                 return {...task, isDone: !task.isDone};
             }
             return task;
