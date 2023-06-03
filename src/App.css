@@ -51,11 +51,6 @@ button{
   color: #FFFFFF;
 }
 
-.task{
-  /* display: flex;
-  justify-content: space-evenly; */
-}
-
 .task>li{
   color: #FFFFFF;
   list-style: none;

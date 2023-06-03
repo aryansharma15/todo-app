@@ -16,34 +16,29 @@ function Todo() {
 
     const addTodo = () => {
         if(todo.trim() !== ""){
-            const newTodo = {
-                id: Math.random() * 100,
-                text: task,
-                isDone: false
-            }
 
-            setTodos([...todos, newTodo]);
+            setTodos([...todos, todo]);
             setTodo("");
         }
         console.log(todos)
     };
 
-    const delTask = (id) => {
+    const delTodo = (id) => {
         const newTodo = todos.filter((todo) => {
-            return todo.id !== id;
+            return todo !== id;
         });
-        setTasks(newTodo);
+        setTodos(newTodo);
     };
 
     const markAsDone = (id) => {
         const updatedTodos = todos.map((todo) => {
-            if(todo.id === id){
+            if(todo === id){
                 return {...todo, isDone: !todo.isDone};
             }
             return todo;
         });
 
-        setTasks(updatedTodos);
+        setTodos(updatedTodos);
     }
 
   return (
@@ -51,16 +46,16 @@ function Todo() {
         <input type="text" value={todo} className="input" onChange={handleChange}/>
         <button className="add-btn" onClick={addTodo}>Add Task</button>
 
-        {tasks?.length > 0 ? (
+        {todos?.length > 0 ? (
         <ul className='list-display'>
-            {tasks.map((task, index) => (
+            {todos.map((todo, index) => (
                 <div className="task">
-                    <li key={index}>
+                    <li key={todo.index}>
                         <input className='checker' type="checkbox" checked={todo.isDone} onChange={() => markAsDone(todo.id)}/>
                         {todo}
                     </li>
                     <button className="delete-btn" onClick={() => {
-                        delTask(todo);
+                        delTodo(todo);
                     }}>Delete</button>
                 </div>
             ))}
