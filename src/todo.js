@@ -22,12 +22,23 @@ function Todo() {
         console.log(tasks)
     };
 
-    const delTask = (text) => {
+    const delTask = (id) => {
         const newTask = tasks.filter((task) => {
-            return task !== text;
+            return task !== id;
         });
         setTasks(newTask);
     };
+
+    const markAsDone = (value) => {
+        const updatedTasks = tasks.map((task) => {
+            if(task === value){
+                return {...task, isDone: !task.isDone};
+            }
+            return task;
+        });
+
+        setTasks(updatedTasks);
+    }
 
   return (
     <div>
@@ -38,7 +49,10 @@ function Todo() {
         <ul className='list-display'>
             {tasks.map((task, index) => (
                 <div className="task">
-                    <li key={index}>{task}</li>
+                    <li key={index}>
+                        <input className='checker' type="checkbox" checked={task.isDone} onChange={() => markAsDone(task.id)}/>
+                        {task}
+                    </li>
                     <button className="delete-btn" onClick={() => {
                         delTask(task);
                     }}>Delete</button>

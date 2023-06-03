@@ -88,6 +88,9 @@ button{
   box-shadow: none;
 }
 
+.checker{
+  padding: 50px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
