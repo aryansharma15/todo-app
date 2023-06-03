@@ -4,51 +4,51 @@ import { useState } from 'react';
 
 function Todo() {
 
-    const [task, setTask] = useState('')
-    const [tasks, setTasks] = useState('')
+    const [todo, setTodo] = useState('')
+    const [todos, setTodos] = useState('')
 
     // const [edit, setEdit] = useState('')
 
     const handleChange = (event) => {
-        setTask(event.target.value);
-        // console.log(task);
+        setTodo(event.target.value);
+        // console.log(todo);
     }
 
     const addTodo = () => {
-        if(task.trim() !== ""){
-            const newTask = {
+        if(todo.trim() !== ""){
+            const newTodo = {
                 id: Math.random() * 100,
                 text: task,
                 isDone: false
             }
 
-            setTasks([...tasks, newTask]);
-            setTask("");
+            setTodos([...todos, newTodo]);
+            setTodo("");
         }
-        console.log(tasks)
+        console.log(todos)
     };
 
     const delTask = (id) => {
-        const newTask = tasks.filter((task) => {
-            return task.id !== id;
+        const newTodo = todos.filter((todo) => {
+            return todo.id !== id;
         });
-        setTasks(newTask);
+        setTasks(newTodo);
     };
 
     const markAsDone = (id) => {
-        const updatedTasks = tasks.map((task) => {
-            if(task.id === id){
-                return {...task, isDone: !task.isDone};
+        const updatedTodos = todos.map((todo) => {
+            if(todo.id === id){
+                return {...todo, isDone: !todo.isDone};
             }
-            return task;
+            return todo;
         });
 
-        setTasks(updatedTasks);
+        setTasks(updatedTodos);
     }
 
   return (
     <div>
-        <input type="text" value={task} className="input" onChange={handleChange}/>
+        <input type="text" value={todo} className="input" onChange={handleChange}/>
         <button className="add-btn" onClick={addTodo}>Add Task</button>
 
         {tasks?.length > 0 ? (
@@ -56,11 +56,11 @@ function Todo() {
             {tasks.map((task, index) => (
                 <div className="task">
                     <li key={index}>
-                        <input className='checker' type="checkbox" checked={task.isDone} onChange={() => markAsDone(task.id)}/>
-                        {task}
+                        <input className='checker' type="checkbox" checked={todo.isDone} onChange={() => markAsDone(todo.id)}/>
+                        {todo}
                     </li>
                     <button className="delete-btn" onClick={() => {
-                        delTask(task);
+                        delTask(todo);
                     }}>Delete</button>
                 </div>
             ))}
