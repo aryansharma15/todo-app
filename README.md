@@ -4,13 +4,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## How to Run
 
-### Download the repository.
-### Install node modules in the command line using `npm i`.
-### Use `npm start` in the root directory to start the application.
+### 1. Download the repository.
+### 2. Install node modules in the command line using `npm i`.
+### 3. Use `npm start` in the root directory to start the application.
 
 The app starts in the development mode.\
-<<<<<<< HEAD
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-=======
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
->>>>>>> 718e5e3db511a5c9f16d327c10d97968a4fbdff1
+
+### 4. Add your tasks
+![Main Screen](src/assets/main.png)
+
+![List of Tasks](src/assets/task_list.png)
+
+### 5. Check-mark the tasks that are accomplished.
+
+![Checking Out Tasks](src/assets/checked_tasks.png)
