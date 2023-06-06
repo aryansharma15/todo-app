@@ -23,8 +23,6 @@ function Todo() {
     const addTodo = () => {
         if(todo.trim() !== ""){
 
-
-
             setTodos([...todos, {id:Date.now(), task: todo, isDone: false}]);
             setTodo("");
         }
